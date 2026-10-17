@@ -8613,9 +8613,9 @@
    LOCAL IMAGE VISIBILITY — show on all screen sizes
    =================================================== */
 
-/* Background_image.svg — was desktop-only */
+/* Background_image.svg — desktop only, hidden on mobile to avoid layering */
 @media only screen and (max-width: 800px) {
-  .dCUGjE { display: flex !important; }
+  .dCUGjE { display: none !important; }
 }
 
 /* hello.svg (desktop wrapper) — extend to mobile too */
