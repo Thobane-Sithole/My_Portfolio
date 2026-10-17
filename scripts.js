@@ -5227,27 +5227,17 @@
 
         })();
 
-// Intercept "work with me" button — runs in capture phase so it fires
-// before React's bubble-phase open-url handler.
+// Intercept "work with me" button at document level (capture phase).
+// React fetches its button URL from systeme.io at runtime, so we cannot
+// patch the href — instead we intercept every click before it reaches
+// React's own handler, regardless of re-renders or dynamic state updates.
 (function () {
-  function setupContactButton() {
-    var btn = document.getElementById('button-12b0a01f');
-    if (!btn || btn.dataset.contactSetup) return;
-    btn.dataset.contactSetup = '1';
-    btn.addEventListener('click', function (e) {
-      e.preventDefault();
-      e.stopImmediatePropagation();
-      var modal = document.getElementById('ts-contact-modal');
-      if (modal) modal.classList.add('active');
-    }, true); // capture phase
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', setupContactButton);
-  } else {
-    setupContactButton();
-  }
-  // Also run after React hydrates
-  setTimeout(setupContactButton, 800);
-  setTimeout(setupContactButton, 1500);
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('#button-12b0a01f');
+    if (!btn) return;
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    var modal = document.getElementById('ts-contact-modal');
+    if (modal) modal.classList.add('active');
+  }, true); // capture phase — fires before any React handler
 })();
