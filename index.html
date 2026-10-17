@@ -1918,7 +1918,7 @@
     submitBtn.classList.add('ts-loading');
     setStatus('');
 
-    fetch('/api/contact', {
+    fetch('https://thobane-sithole-api.onrender.com/api/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name: name, email: email, service: service, message: message })

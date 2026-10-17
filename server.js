@@ -4,6 +4,24 @@ const path = require('path');
 
 const app = express();
 app.use(express.json());
+
+/* Allow requests from the portfolio static site */
+app.use(function (req, res, next) {
+  const allowed = [
+    'https://thobane-sithole-portfolio.onrender.com',
+    'http://localhost:3000',
+    'http://127.0.0.1:5500'
+  ];
+  const origin = req.headers.origin;
+  if (!origin || allowed.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin || '*');
+  }
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  if (req.method === 'OPTIONS') return res.sendStatus(204);
+  next();
+});
+
 app.use(express.static(path.join(__dirname)));
 
 app.post('/api/contact', async (req, res) => {

@@ -1,6 +1,18 @@
 services:
-  - type: web
+  - type: static
     name: thobane-sithole-portfolio
+    staticPublishPath: .
+    pullRequestPreviewsEnabled: false
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /index.html
+        name: Cache-Control
+        value: no-cache
+
+  - type: web
+    name: thobane-sithole-api
     runtime: node
     buildCommand: npm install
     startCommand: npm start
