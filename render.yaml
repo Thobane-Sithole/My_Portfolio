@@ -1,6 +1,7 @@
 services:
-  - type: static
+  - type: web
     name: thobane-sithole-portfolio
+    env: static
     staticPublishPath: .
     pullRequestPreviewsEnabled: false
     headers:
@@ -13,7 +14,7 @@ services:
 
   - type: web
     name: thobane-sithole-api
-    runtime: node
+    env: node
     buildCommand: npm install
     startCommand: npm start
     envVars:
