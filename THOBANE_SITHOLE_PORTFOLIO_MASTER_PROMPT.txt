@@ -1,0 +1,44 @@
+MASTER WEBSITE RECREATION PROMPT — THOBANE SITHOLE’S PORTFOLIO
+
+Use the supplied website archive as the source of truth. Recreate its complete portfolio experience for “Thobane Sithole” while preserving the original site’s overall structure, visual hierarchy, project-gallery behavior, motion language, and all assets that are actually present. Do not invent projects, client names, testimonials, metrics, credentials, links, audio tracks, or biography details. Where personal information or project facts are missing, use clearly marked editable placeholders or omit them until supplied. Do not copy the original creator’s identity or imply their work belongs to Thobane; treat the archive as a design/interaction reference and replace creator-specific branding and copy.
+
+DESIGN INTENT
+Build a bold, polished, high-impact creative portfolio for a digital builder / web designer. The reference uses a dark, editorial, high-contrast visual language, oversized expressive typography, compact uppercase labels, numbered sections, layered visual compositions, project imagery, generous negative space, and confident conversion-oriented copy. Keep the result premium and intentional rather than a generic template. Match the source archive’s actual colors, typefaces, spacing, image compositions, and responsive behavior by inspecting its HTML, CSS, JavaScript, and assets; do not guess where the source provides evidence.
+
+INFORMATION ARCHITECTURE — preserve the full long-page journey
+1. Intro / portfolio entry screen: show the creator label updated to “THOBANE SITHOLE · PORTFOLIO”, a strong “ENTER THE PORTFOLIO” call to action, and a concise note that sound is optional. Preserve an entry/loading transition only to the extent demonstrated by the source. Sound must never autoplay unexpectedly; provide an accessible, user-controlled sound toggle if the supplied implementation includes audio.
+2. Hero: clear availability/status label, a large headline introducing Thobane’s real service focus, location/work scope only if confirmed, and a subtle scroll cue. Keep the dramatic headline layout and strong first-screen impact, but do not reuse factual claims from the reference creator.
+3. Selected work / project gallery: retain the reference’s numbered project showcase and image-led presentation. Preserve all supplied project media and its order unless there is evidence they belong to another person and should be replaced. Use only verified project names and descriptions; otherwise label entries as editable “Project 01” placeholders. Keep gallery navigation and scroll/focus behavior working.
+4. About / behind the work: an editorial introduction to Thobane, using only facts he provides. Explain approach and values through editable copy, not fabricated biography.
+5. Services: preserve the source’s multi-card service section and hierarchy. The reference covers funnel design, funnel building, custom digital builds, and funnel systems / integrations. Adapt these to Thobane’s actual capabilities; make unconfirmed services editable placeholders rather than claims.
+6. Process: retain the six-stage process pattern shown in the reference—diagnose, map, design, build, connect, launch—only if it fits Thobane’s real workflow. Present each stage with a short description and a clear visual rhythm.
+7. Results / testimonials: preserve the section’s visual treatment, carousel/navigation behavior, and animated metric style, but never carry over the source creator’s sales figures, years, project counts, client statements, or other claims as Thobane’s. Use verified supplied evidence only; otherwise display clearly editable placeholders or hide unsupported metrics.
+8. Closing call to action: create a strong final invitation to discuss a project, with a working contact/work-with-me link only when a valid destination is supplied.
+9. Footer: update identity and copyright to Thobane Sithole, with only verified links and details. Remove the original creator’s name, domain, branding, and attribution from the visible rebranded experience while retaining third-party license notices where legally required.
+
+ANIMATION AND INTERACTION
+Audit and reproduce every meaningful animation and interaction present in the source rather than adding random effects:
+- Intro/entry overlay and loading state, including its timing and exit behavior where supported by the source.
+- Smooth page scrolling and a subtle looping scroll hint that disappears when scrolling begins.
+- Project-gallery movement, focus tracking, active-item indicators, and edge/top/bottom fade changes where implemented.
+- Staggered reveals and short eased entrance motion for visual groups.
+- Scroll-triggered number counters using IntersectionObserver/requestAnimationFrame, triggered only when visible; use only verified values, and do not animate invented metrics.
+- Existing image/montage motion and transitions, preserving direction, duration, easing, and sequence found in the source.
+- Button hover/focus feedback, section transitions, carousel arrows and index updates, and any other controls actually present.
+- If audio is included in the supplied source, preserve the audio UI and soundtrack asset/reference only if available and functional. Start playback only after an explicit user gesture, expose a clear mute/sound state, and gracefully handle unavailable audio.
+Use the original implementation as evidence for exact animation behavior. Do not claim to reproduce any effect that is not present in the archive. Avoid excessive motion; respect prefers-reduced-motion and provide keyboard-accessible controls.
+
+RESPONSIVE AND ACCESSIBILITY REQUIREMENTS
+Make the entire page work at desktop, tablet, and mobile sizes. The source contains separate desktop/mobile layout rules; inspect and preserve their intent rather than merely shrinking the desktop layout. Prevent horizontal overflow, keep typography legible, preserve image crops intentionally, and ensure touch targets are usable. Use semantic landmarks, logical heading order, meaningful alt text when known, visible keyboard focus, accessible labels for icon-only controls, and sufficient contrast. Disable or simplify nonessential movement under prefers-reduced-motion. Ensure controls work with keyboard and touch.
+
+IMPLEMENTATION AND CONTENT INTEGRITY
+- Treat the supplied ZIP as the source of truth; inspect every file and preserve all original assets and working code paths unless a change is necessary for the requested rebrand.
+- Keep all sections and interactions; do not silently omit content, assets, styles, scripts, responsive rules, or footer details.
+- Update the browser title, metadata, social-sharing title/description/image where appropriate, favicon references where a replacement is supplied, visible branding, and internal references consistently for Thobane Sithole.
+- Keep local assets and relative paths intact. Do not assume remote images or fonts will always load; add graceful fallbacks without deleting the original references.
+- Do not invent a domain, email address, social profile, client, result, testimonial, project, or biography. Make unknown details obvious and editable.
+- Do not claim the website is fully tested unless you actually test it. Verify links, buttons, menu/gallery navigation, responsive layouts, console errors, animation triggers, audio consent, and reduced-motion behavior.
+- Preserve all supplied files and provide a concise inventory of what was changed, what was preserved, and any dependencies or remote assets that may need attention.
+
+SUCCESS CRITERIA
+The finished result should feel like a faithful, complete, high-energy editorial portfolio inspired by the supplied reference, personalized for Thobane Sithole without falsely attributing the original creator’s identity or achievements. Every page section, asset, responsive layout, animation, and interaction evidenced by the archive must be accounted for. Accuracy and completeness take priority over invented polish.
