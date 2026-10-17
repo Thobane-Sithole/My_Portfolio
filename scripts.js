@@ -5227,3 +5227,27 @@
 
         })();
 
+// Intercept "work with me" button — runs in capture phase so it fires
+// before React's bubble-phase open-url handler.
+(function () {
+  function setupContactButton() {
+    var btn = document.getElementById('button-12b0a01f');
+    if (!btn || btn.dataset.contactSetup) return;
+    btn.dataset.contactSetup = '1';
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      var modal = document.getElementById('ts-contact-modal');
+      if (modal) modal.classList.add('active');
+    }, true); // capture phase
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupContactButton);
+  } else {
+    setupContactButton();
+  }
+  // Also run after React hydrates
+  setTimeout(setupContactButton, 800);
+  setTimeout(setupContactButton, 1500);
+})();
