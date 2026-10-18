@@ -23,8 +23,8 @@
   --bg:        #0a0a0a;
   --bg-2:      #111111;
   --bg-light:  #f5f5f0;
-  --red:       #920000;
-  --red-hover: #b50000;
+  --orange:       #e85d00;
+  --orange-hover: #ff7518;
   --white:     #ffffff;
   --muted:     rgba(255,255,255,.45);
   --border:    rgba(255,255,255,.08);
@@ -68,7 +68,7 @@ h1,h2,h3,h4,h5,h6 { font-weight: normal; line-height: 1.05; }
 /* ═══════════════════════════════════════════════════
    UTILITIES
 ═══════════════════════════════════════════════════ */
-.ts-red { color: var(--red); }
+.ts-orange { color: var(--orange); }
 .ts-hidden { opacity: 0; pointer-events: none; visibility: hidden; }
 .ts-hidden.ts-visible { opacity: 1; pointer-events: auto; visibility: visible; }
 
@@ -92,9 +92,9 @@ h1,h2,h3,h4,h5,h6 { font-weight: normal; line-height: 1.05; }
 .ts-btn-pill:hover { background: transparent; color: var(--white); }
 .ts-btn-outline { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,.35); }
 .ts-btn-outline:hover { border-color: var(--white); }
-.ts-btn-red { background: var(--red); color: var(--white); flex-direction: column; align-items: flex-start; border-radius: var(--radius); padding: 1.1em 2em; }
-.ts-btn-red small { display: block; font-size: var(--size-xs); letter-spacing: .05em; text-transform: none; opacity: .7; margin-top: .25em; }
-.ts-btn-red:hover { background: var(--red-hover); }
+.ts-btn-orange { background: var(--orange); color: var(--white); flex-direction: column; align-items: flex-start; border-radius: var(--radius); padding: 1.1em 2em; }
+.ts-btn-orange small { display: block; font-size: var(--size-xs); letter-spacing: .05em; text-transform: none; opacity: .7; margin-top: .25em; }
+.ts-btn-orange:hover { background: var(--orange-hover); }
 .ts-btn-arrow { font-size: 1.1em; }
 
 /* DISPLAY HEADING */
@@ -148,7 +148,7 @@ h1,h2,h3,h4,h5,h6 { font-weight: normal; line-height: 1.05; }
 .ts-section-num {
   font-family: var(--font-display);
   font-size: 1rem;
-  color: var(--red);
+  color: var(--orange);
 }
 .ts-section-label {
   font-size: var(--size-xs);
@@ -189,7 +189,7 @@ h1,h2,h3,h4,h5,h6 { font-weight: normal; line-height: 1.05; }
 .ts-gate-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(10,10,10,.6) 0%, rgba(10,10,10,.85) 100%);
+  background: linear-gradient(to bottom, rgba(10,10,10,.82) 0%, rgba(10,10,10,.92) 100%);
 }
 .ts-gate-content {
   position: relative;
@@ -280,7 +280,7 @@ h1,h2,h3,h4,h5,h6 { font-weight: normal; line-height: 1.05; }
 .ts-music-disc {
   width: 32px; height: 32px;
   border-radius: 50%;
-  background: var(--red);
+  background: var(--orange);
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
   transition: transform .4s;
@@ -307,6 +307,9 @@ h1,h2,h3,h4,h5,h6 { font-weight: normal; line-height: 1.05; }
    SITE VISIBLE TRANSITION
 ═══════════════════════════════════════════════════ */
 #ts-site {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
   transition: opacity .6s var(--easing), visibility .6s;
 }
 #ts-site.ts-visible { opacity: 1; pointer-events: auto; visibility: visible; }
@@ -396,8 +399,6 @@ h1,h2,h3,h4,h5,h6 { font-weight: normal; line-height: 1.05; }
 .ts-hero-hello {
   width: min(340px, 55vw);
   margin-bottom: 1rem;
-  opacity: 0;
-  animation: fadeUp 1s var(--easing) .1s forwards;
 }
 .ts-hero-name {
   font-family: var(--font-display);
@@ -405,16 +406,12 @@ h1,h2,h3,h4,h5,h6 { font-weight: normal; line-height: 1.05; }
   text-transform: uppercase;
   line-height: .95;
   color: var(--white);
-  opacity: 0;
-  animation: fadeUp 1s var(--easing) .25s forwards;
 }
 .ts-hero-tagline {
   font-size: clamp(1rem, 2vw, 1.35rem);
   color: var(--muted);
   margin-top: 1.5rem;
   max-width: 440px;
-  opacity: 0;
-  animation: fadeUp 1s var(--easing) .45s forwards;
 }
 .ts-hero-location {
   font-size: var(--size-xs);
@@ -422,8 +419,6 @@ h1,h2,h3,h4,h5,h6 { font-weight: normal; line-height: 1.05; }
   text-transform: uppercase;
   color: var(--muted);
   margin-top: 1rem;
-  opacity: 0;
-  animation: fadeUp 1s var(--easing) .6s forwards;
 }
 .ts-hero-scroll-cue {
   position: absolute;
@@ -505,12 +500,12 @@ h1,h2,h3,h4,h5,h6 { font-weight: normal; line-height: 1.05; }
   letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--white);
-  border-bottom: 1px solid var(--red);
+  border-bottom: 1px solid var(--orange);
   padding-bottom: .15em;
   transition: color .2s, border-color .2s;
   width: fit-content;
 }
-.ts-project-cta:hover { color: var(--red); }
+.ts-project-cta:hover { color: var(--orange); }
 
 /* ═══════════════════════════════════════════════════
    ABOUT
@@ -521,7 +516,7 @@ h1,h2,h3,h4,h5,h6 { font-weight: normal; line-height: 1.05; }
   color: #0a0a0a;
 }
 #ts-about .ts-section-header { border-top-color: rgba(10,10,10,.12); }
-#ts-about .ts-section-num { color: var(--red); }
+#ts-about .ts-section-num { color: var(--orange); }
 #ts-about .ts-section-label { color: rgba(10,10,10,.45); }
 .ts-about-layout {
   max-width: 1200px;
@@ -584,7 +579,7 @@ h1,h2,h3,h4,h5,h6 { font-weight: normal; line-height: 1.05; }
   padding-left: 1em;
   position: relative;
 }
-.ts-service-list li::before { content: '—'; position: absolute; left: 0; color: var(--red); }
+.ts-service-list li::before { content: '—'; position: absolute; left: 0; color: var(--orange); }
 
 /* ═══════════════════════════════════════════════════
    PROCESS
@@ -644,7 +639,7 @@ h1,h2,h3,h4,h5,h6 { font-weight: normal; line-height: 1.05; }
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 5vw, 4.5rem);
   line-height: 1;
-  color: var(--red);
+  color: var(--orange);
   margin-bottom: .5rem;
 }
 .ts-metric-label { font-size: var(--size-xs); letter-spacing: .15em; text-transform: uppercase; color: var(--muted); }
@@ -684,7 +679,7 @@ h1,h2,h3,h4,h5,h6 { font-weight: normal; line-height: 1.05; }
   font-size: var(--size-xs);
   letter-spacing: .2em;
   text-transform: uppercase;
-  color: var(--red);
+  color: var(--orange);
   margin-bottom: 1rem;
 }
 #ts-cta .ts-display-heading { color: #0a0a0a; margin-bottom: 1.5rem; }
@@ -787,7 +782,7 @@ h1,h2,h3,h4,h5,h6 { font-weight: normal; line-height: 1.05; }
   transition: color .2s, border-color .2s;
 }
 .ts-modal-close:hover { color: var(--white); border-color: var(--white); }
-.ts-modal-eyebrow { font-size: var(--size-xs); letter-spacing: .15em; text-transform: uppercase; color: var(--red); display: block; margin-bottom: .75rem; }
+.ts-modal-eyebrow { font-size: var(--size-xs); letter-spacing: .15em; text-transform: uppercase; color: var(--orange); display: block; margin-bottom: .75rem; }
 .ts-modal-title { font-family: var(--font-display); font-size: 2.2rem; line-height: 1.05; margin-bottom: .75rem; }
 .ts-modal-sub { font-size: var(--size-sm); color: var(--muted); margin-bottom: 2rem; }
 
@@ -851,6 +846,210 @@ h1,h2,h3,h4,h5,h6 { font-weight: normal; line-height: 1.05; }
 }
 
 /* ═══════════════════════════════════════════════════
+   SCROLL ANIMATIONS — WORD SPLIT
+   Each word in a .ts-split-words heading is wrapped
+   in .ts-word by JS, then animated on reveal.
+═══════════════════════════════════════════════════ */
+.ts-split-words .ts-word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+.ts-split-words .ts-word-inner {
+  display: inline-block;
+  transform: translateY(110%);
+  transition: transform .75s cubic-bezier(.16,1,.3,1);
+}
+.ts-split-words.ts-in-view .ts-word-inner {
+  transform: translateY(0);
+}
+/* stagger each word */
+.ts-split-words.ts-in-view .ts-word:nth-child(1)  .ts-word-inner { transition-delay: 0s; }
+.ts-split-words.ts-in-view .ts-word:nth-child(2)  .ts-word-inner { transition-delay: .07s; }
+.ts-split-words.ts-in-view .ts-word:nth-child(3)  .ts-word-inner { transition-delay: .14s; }
+.ts-split-words.ts-in-view .ts-word:nth-child(4)  .ts-word-inner { transition-delay: .21s; }
+.ts-split-words.ts-in-view .ts-word:nth-child(5)  .ts-word-inner { transition-delay: .28s; }
+.ts-split-words.ts-in-view .ts-word:nth-child(6)  .ts-word-inner { transition-delay: .35s; }
+.ts-split-words.ts-in-view .ts-word:nth-child(7)  .ts-word-inner { transition-delay: .42s; }
+.ts-split-words.ts-in-view .ts-word:nth-child(8)  .ts-word-inner { transition-delay: .49s; }
+
+/* ═══════════════════════════════════════════════════
+   SCROLL ANIMATIONS — LINE GROW
+   Horizontal rules and decorative lines animate in.
+═══════════════════════════════════════════════════ */
+.ts-line-grow {
+  width: 0;
+  height: 1px;
+  background: var(--orange);
+  transition: width 1s cubic-bezier(.16,1,.3,1);
+  display: block;
+}
+.ts-line-grow.ts-in-view { width: 100%; }
+
+/* ═══════════════════════════════════════════════════
+   SCROLL ANIMATIONS — SLIDE VARIANTS
+   Alternate slide directions for visual interest.
+═══════════════════════════════════════════════════ */
+.ts-reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity .75s cubic-bezier(.16,1,.3,1), transform .75s cubic-bezier(.16,1,.3,1);
+}
+.ts-reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity .75s cubic-bezier(.16,1,.3,1), transform .75s cubic-bezier(.16,1,.3,1);
+}
+.ts-reveal-scale {
+  opacity: 0;
+  transform: scale(.94);
+  transition: opacity .75s cubic-bezier(.16,1,.3,1), transform .75s cubic-bezier(.16,1,.3,1);
+}
+.ts-reveal-left.ts-in-view,
+.ts-reveal-right.ts-in-view,
+.ts-reveal-scale.ts-in-view { opacity: 1; transform: none; }
+
+/* ═══════════════════════════════════════════════════
+   SCROLL ANIMATIONS — CASCADING CARDS
+   JS adds ts-in-view to each child with stagger via
+   setTimeout, so children use their own ts-reveal.
+   The parent ts-cascade only triggers that JS path.
+═══════════════════════════════════════════════════ */
+/* (cascade children animate via their own ts-reveal) */
+
+/* ═══════════════════════════════════════════════════
+   SCROLL ANIMATIONS — COUNTER
+═══════════════════════════════════════════════════ */
+.ts-metric-value {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ═══════════════════════════════════════════════════
+   SCROLL ANIMATIONS — IMAGE PARALLAX
+   Controlled by --parallax-y CSS var set by JS.
+═══════════════════════════════════════════════════ */
+.ts-parallax-img {
+  will-change: transform;
+  transform: translateY(var(--parallax-y, 0px));
+  transition: transform 0s linear;
+}
+
+/* ═══════════════════════════════════════════════════
+   SCROLL ANIMATIONS — SECTION NUMBER WIPE
+   Big background numbers wipe in from left.
+═══════════════════════════════════════════════════ */
+.ts-project-num {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1s cubic-bezier(.16,1,.3,1) .2s;
+}
+.ts-in-view .ts-project-num,
+.ts-project.ts-in-view .ts-project-num { clip-path: inset(0 0% 0 0); }
+
+/* ═══════════════════════════════════════════════════
+   SCROLL ANIMATIONS — PROCESS STEP BORDER DRAW
+   Border-top of each step grows in.
+═══════════════════════════════════════════════════ */
+.ts-process-step {
+  position: relative;
+}
+.ts-process-step::before {
+  content: '';
+  position: absolute;
+  top: -1px; left: 0;
+  height: 2px;
+  background: var(--orange);
+  width: 0;
+  transition: width .8s cubic-bezier(.16,1,.3,1) calc(var(--i,0) * .12s);
+}
+.ts-process-step.ts-in-view::before { width: 100%; }
+
+/* ═══════════════════════════════════════════════════
+   SCROLL ANIMATIONS — SERVICE CARD HOVER GLOW
+═══════════════════════════════════════════════════ */
+.ts-service-card {
+  position: relative;
+  overflow: hidden;
+}
+.ts-service-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle 200px at var(--mx,50%) var(--my,50%), rgba(146,0,0,.08) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity .3s;
+  pointer-events: none;
+}
+.ts-service-card:hover::after { opacity: 1; }
+
+/* ═══════════════════════════════════════════════════
+   SCROLL ANIMATIONS — MARQUEE TICKER (footer)
+═══════════════════════════════════════════════════ */
+.ts-ticker-wrap {
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: .8rem 0;
+  margin-bottom: 0;
+}
+.ts-ticker {
+  display: flex;
+  white-space: nowrap;
+  animation: ticker 18s linear infinite;
+}
+.ts-ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 2rem;
+  padding-right: 4rem;
+  font-family: var(--font-display);
+  font-size: var(--size-xl);
+  color: rgba(255,255,255,.15);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  user-select: none;
+}
+.ts-ticker-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--orange);
+  flex-shrink: 0;
+  opacity: .5;
+}
+@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ═══════════════════════════════════════════════════
+   SCROLL ANIMATIONS — SECTION LABEL SLIDE
+═══════════════════════════════════════════════════ */
+.ts-section-label {
+  overflow: hidden;
+}
+.ts-section-label-inner {
+  display: inline-block;
+  transform: translateX(-100%);
+  transition: transform .9s cubic-bezier(.16,1,.3,1) .15s;
+  opacity: 0;
+  transition: transform .9s cubic-bezier(.16,1,.3,1) .15s,
+              opacity .4s ease .15s;
+}
+.ts-in-view .ts-section-label-inner,
+.ts-section-header.ts-in-view .ts-section-label-inner {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* ═══════════════════════════════════════════════════
+   ENHANCED BASE REVEAL
+   Override with smoother easing.
+═══════════════════════════════════════════════════ */
+.ts-reveal {
+  transition: opacity .8s cubic-bezier(.16,1,.3,1),
+              transform .8s cubic-bezier(.16,1,.3,1);
+}
+.ts-reveal-delay-1 { transition-delay: .12s; }
+.ts-reveal-delay-2 { transition-delay: .24s; }
+.ts-reveal-delay-3 { transition-delay: .36s; }
+
+/* ═══════════════════════════════════════════════════
    REDUCED MOTION
 ═══════════════════════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {
@@ -858,6 +1057,16 @@ h1,h2,h3,h4,h5,h6 { font-weight: normal; line-height: 1.05; }
     animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: .01ms !important;
+    transition-delay: 0ms !important;
   }
-  .ts-reveal { opacity: 1 !important; transform: none !important; }
+  .ts-reveal,
+  .ts-reveal-left,
+  .ts-reveal-right,
+  .ts-reveal-scale { opacity: 1 !important; transform: none !important; }
+  .ts-split-words .ts-word-inner { transform: none !important; }
+  .ts-line-grow { width: 100% !important; }
+  .ts-process-step::before { width: 100% !important; }
+  .ts-project-num { clip-path: none !important; }
+  .ts-cascade > * { opacity: 1 !important; transform: none !important; }
+  .ts-ticker { animation: none !important; }
 }

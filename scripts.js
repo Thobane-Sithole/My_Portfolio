@@ -63,8 +63,15 @@
       }, 400);
     }
 
-    // Start reveals
+    // Prepare & start reveals
+    splitWords();
+    initCascade();
+    initProcessSteps();
     setTimeout(initReveal, 300);
+    setTimeout(initCounters, 400);
+    initParallax();
+    initCardGlow();
+    initTicker();
   }
 
   if (gateBtn) {
@@ -147,19 +154,140 @@
      INTERSECTION OBSERVER — REVEALS
   ───────────────────────────────────────── */
   function initReveal() {
-    var items = document.querySelectorAll('.ts-reveal');
+    var selectors = [
+      '.ts-reveal', '.ts-reveal-left', '.ts-reveal-right', '.ts-reveal-scale',
+      '.ts-split-words', '.ts-line-grow', '.ts-cascade',
+      '.ts-process-step', '.ts-section-header', '.ts-section-label'
+    ];
+    var items = document.querySelectorAll(selectors.join(','));
     if (!items.length) return;
 
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('ts-in-view');
-          observer.unobserve(entry.target);
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        observer.unobserve(el);
+        // Cascade: stagger ts-in-view onto each direct child
+        if (el.classList.contains('ts-cascade')) {
+          Array.from(el.children).forEach(function (child, i) {
+            setTimeout(function () { child.classList.add('ts-in-view'); }, i * 110);
+          });
         }
+        el.classList.add('ts-in-view');
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.1 });
 
     items.forEach(function (el) { observer.observe(el); });
+  }
+
+  /* ─────────────────────────────────────────
+     WORD SPLIT — wrap each word for slide-up
+  ───────────────────────────────────────── */
+  function splitWords() {
+    document.querySelectorAll('.ts-split-words').forEach(function (el) {
+      var words = el.textContent.trim().split(/\s+/);
+      el.innerHTML = words.map(function (w) {
+        return '<span class="ts-word"><span class="ts-word-inner">' + w + '</span></span>';
+      }).join(' ');
+    });
+  }
+
+  /* ─────────────────────────────────────────
+     CASCADE CHILDREN — set --i delay index
+  ───────────────────────────────────────── */
+  function initCascade() {
+    document.querySelectorAll('.ts-cascade').forEach(function (parent) {
+      Array.from(parent.children).forEach(function (child, i) {
+        child.style.setProperty('--i', i);
+      });
+    });
+  }
+
+  /* ─────────────────────────────────────────
+     PROCESS STEPS — set --i for stagger
+  ───────────────────────────────────────── */
+  function initProcessSteps() {
+    document.querySelectorAll('.ts-process-step').forEach(function (el, i) {
+      el.style.setProperty('--i', i);
+    });
+  }
+
+  /* ─────────────────────────────────────────
+     COUNTER ANIMATION — count up on enter
+  ───────────────────────────────────────── */
+  function initCounters() {
+    var counters = document.querySelectorAll('[data-count]');
+    if (!counters.length) return;
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        observer.unobserve(entry.target);
+
+        var el     = entry.target;
+        var target = parseFloat(el.dataset.count);
+        var suffix = el.dataset.countSuffix || '';
+        var prefix = el.dataset.countPrefix || '';
+        var duration = 1800;
+        var start    = performance.now();
+
+        function tick(now) {
+          var elapsed = now - start;
+          var progress = Math.min(elapsed / duration, 1);
+          // ease out expo
+          var eased = 1 - Math.pow(1 - progress, 4);
+          var current = Math.round(target * eased);
+          el.textContent = prefix + current + suffix;
+          if (progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      });
+    }, { threshold: 0.4 });
+
+    counters.forEach(function (el) { observer.observe(el); });
+  }
+
+  /* ─────────────────────────────────────────
+     PARALLAX — hero background drifts on scroll
+  ───────────────────────────────────────── */
+  function initParallax() {
+    var heroImg = document.querySelector('.ts-parallax-img');
+    if (!heroImg) return;
+
+    var ticking = false;
+    function updateParallax() {
+      var y = window.scrollY;
+      heroImg.style.setProperty('--parallax-y', (y * 0.3) + 'px');
+      ticking = false;
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) { requestAnimationFrame(updateParallax); ticking = true; }
+    }, { passive: true });
+  }
+
+  /* ─────────────────────────────────────────
+     SERVICE CARD GLOW — follow cursor
+  ───────────────────────────────────────── */
+  function initCardGlow() {
+    document.querySelectorAll('.ts-service-card').forEach(function (card) {
+      card.addEventListener('mousemove', function (e) {
+        var rect = card.getBoundingClientRect();
+        var x = ((e.clientX - rect.left) / rect.width * 100).toFixed(1);
+        var y = ((e.clientY - rect.top)  / rect.height * 100).toFixed(1);
+        card.style.setProperty('--mx', x + '%');
+        card.style.setProperty('--my', y + '%');
+      });
+    });
+  }
+
+  /* ─────────────────────────────────────────
+     TICKER — duplicate content for seamless loop
+  ───────────────────────────────────────── */
+  function initTicker() {
+    var ticker = document.querySelector('.ts-ticker');
+    if (!ticker) return;
+    var clone = ticker.innerHTML;
+    ticker.innerHTML += clone;
   }
 
   /* ─────────────────────────────────────────

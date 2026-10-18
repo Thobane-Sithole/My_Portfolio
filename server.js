@@ -47,7 +47,7 @@ app.post('/api/contact', async (req, res) => {
       subject: `New inquiry from ${name} — ${service || 'General'}`,
       html: `
         <div style="font-family:sans-serif;max-width:600px;margin:0 auto;background:#020202;color:#fff;padding:32px;border-radius:8px;">
-          <h2 style="color:#920000;margin:0 0 24px;font-size:24px;text-transform:uppercase;letter-spacing:3px;">New Portfolio Inquiry</h2>
+          <h2 style="color:#e85d00;margin:0 0 24px;font-size:24px;text-transform:uppercase;letter-spacing:3px;">New Portfolio Inquiry</h2>
           <table style="width:100%;border-collapse:collapse;">
             <tr><td style="padding:8px 0;color:#999;font-size:12px;text-transform:uppercase;letter-spacing:2px;width:120px;">Name</td><td style="padding:8px 0;color:#fff;">${name}</td></tr>
             <tr><td style="padding:8px 0;color:#999;font-size:12px;text-transform:uppercase;letter-spacing:2px;">Email</td><td style="padding:8px 0;color:#fff;">${email}</td></tr>
