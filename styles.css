@@ -8613,9 +8613,14 @@
    LOCAL IMAGE VISIBILITY — show on all screen sizes
    =================================================== */
 
-/* Background_image.png — hidden on all screen sizes (overlaps hero photo) */
-#image-8353141a,
-.dCUGjE { display: none !important; }
+/* Background_image.svg — desktop only, hidden on mobile to avoid layering */
+@media only screen and (max-width: 800px) {
+  .dCUGjE { display: none !important; }
+}
+
+/* disp.png — Yanz Cruz template placeholder, hide on all screens */
+#image-cbcee330,
+#image-e7349733 { display: none !important; }
 
 /* hello.svg (desktop wrapper) — extend to mobile too */
 @media only screen and (max-width: 800px) {
