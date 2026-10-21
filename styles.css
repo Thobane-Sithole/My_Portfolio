@@ -31,6 +31,7 @@
 
   --font-display: 'Coolvetica', 'Arial Black', sans-serif;
   --font-body:    'Garet', 'Arial', sans-serif;
+  --font-mono:    'Space Mono', 'Courier New', monospace;
 
   --size-xs:  0.7rem;
   --size-sm:  0.875rem;
@@ -146,13 +147,14 @@ h1,h2,h3,h4,h5,h6 { font-weight: normal; line-height: 1.05; }
 }
 .ts-section-meta { display: flex; align-items: center; gap: 1rem; }
 .ts-section-num {
-  font-family: var(--font-display);
-  font-size: 1rem;
+  font-family: var(--font-mono);
+  font-size: .9rem;
   color: var(--orange);
 }
 .ts-section-label {
+  font-family: var(--font-mono);
   font-size: var(--size-xs);
-  letter-spacing: .15em;
+  letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--muted);
 }
@@ -338,8 +340,9 @@ h1,h2,h3,h4,h5,h6 { font-weight: normal; line-height: 1.05; }
 .ts-nav-logo img { width: 52px; height: auto; }
 .ts-nav-links { display: flex; gap: 2.5rem; }
 .ts-nav-links a {
+  font-family: var(--font-mono);
   font-size: var(--size-xs);
-  letter-spacing: .15em;
+  letter-spacing: .08em;
   text-transform: uppercase;
   color: var(--muted);
   transition: color .2s;
@@ -492,7 +495,7 @@ h1,h2,h3,h4,h5,h6 { font-weight: normal; line-height: 1.05; }
   user-select: none;
 }
 .ts-project-title { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.8rem); }
-.ts-project-tags { font-size: var(--size-xs); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.ts-project-tags { font-family: var(--font-mono); font-size: var(--size-xs); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
 .ts-project-desc { font-size: var(--size-sm); line-height: 1.7; color: rgba(255,255,255,.65); }
 .ts-project-cta {
   display: inline-flex;
@@ -563,8 +566,8 @@ h1,h2,h3,h4,h5,h6 { font-weight: normal; line-height: 1.05; }
 }
 .ts-service-card:hover { border-color: rgba(255,255,255,.2); background: #161616; }
 .ts-service-num {
-  font-family: var(--font-display);
-  font-size: 3rem;
+  font-family: var(--font-mono);
+  font-size: 2.5rem;
   line-height: 1;
   color: rgba(255,255,255,.06);
   display: block;
@@ -604,14 +607,14 @@ h1,h2,h3,h4,h5,h6 { font-weight: normal; line-height: 1.05; }
 .ts-process-step:nth-child(3n) { border-right: 1px solid var(--border); }
 .ts-process-step:nth-child(n+4) { border-bottom: 1px solid var(--border); }
 .ts-process-num {
-  font-family: var(--font-display);
-  font-size: 4rem;
+  font-family: var(--font-mono);
+  font-size: 3.5rem;
   line-height: 1;
   color: rgba(255,255,255,.05);
   display: block;
   margin-bottom: .5rem;
 }
-.ts-process-title { font-family: var(--font-display); font-size: 1.4rem; margin-bottom: .75rem; color: var(--white); }
+.ts-process-title { font-family: var(--font-mono); font-size: 1.25rem; font-weight: 700; letter-spacing: -.01em; margin-bottom: .75rem; color: var(--white); }
 .ts-process-desc { font-size: var(--size-sm); line-height: 1.7; color: rgba(255,255,255,.5); }
 
 /* ═══════════════════════════════════════════════════
@@ -638,7 +641,7 @@ h1,h2,h3,h4,h5,h6 { font-weight: normal; line-height: 1.05; }
   background: var(--bg-2);
 }
 .ts-metric-value {
-  font-family: var(--font-display);
+  font-family: var(--font-mono);
   font-size: clamp(2.5rem, 5vw, 4.5rem);
   line-height: 1;
   color: var(--orange);
@@ -678,8 +681,9 @@ h1,h2,h3,h4,h5,h6 { font-weight: normal; line-height: 1.05; }
   margin: 0 auto;
 }
 .ts-cta-eyebrow {
+  font-family: var(--font-mono);
   font-size: var(--size-xs);
-  letter-spacing: .2em;
+  letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--orange);
   margin-bottom: 1rem;
@@ -784,7 +788,7 @@ h1,h2,h3,h4,h5,h6 { font-weight: normal; line-height: 1.05; }
   transition: color .2s, border-color .2s;
 }
 .ts-modal-close:hover { color: var(--white); border-color: var(--white); }
-.ts-modal-eyebrow { font-size: var(--size-xs); letter-spacing: .15em; text-transform: uppercase; color: var(--orange); display: block; margin-bottom: .75rem; }
+.ts-modal-eyebrow { font-family: var(--font-mono); font-size: var(--size-xs); letter-spacing: .08em; text-transform: uppercase; color: var(--orange); display: block; margin-bottom: .75rem; }
 .ts-modal-title { font-family: var(--font-display); font-size: 2.2rem; line-height: 1.05; margin-bottom: .75rem; }
 .ts-modal-sub { font-size: var(--size-sm); color: var(--muted); margin-bottom: 2rem; }
 
