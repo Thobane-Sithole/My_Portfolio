@@ -10,6 +10,8 @@ app.use(function (req, res, next) {
   const allowed = [
     'https://thobane-sithole-portfolio.onrender.com',
     'http://localhost:3000',
+    'http://localhost:3333',
+    'http://127.0.0.1:3333',
     'http://127.0.0.1:5500'
   ];
   const origin = req.headers.origin;
