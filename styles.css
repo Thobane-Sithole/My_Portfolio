@@ -411,6 +411,11 @@ h1,h2,h3,h4,h5,h6 { font-weight: normal; line-height: 1.05; }
   object-fit: cover;
   object-position: top center;
 }
+.ts-hero-video--mobile { display: none; }
+@media (max-width: 768px) {
+  .ts-hero-video--desktop { display: none; }
+  .ts-hero-video--mobile  { display: block; }
+}
 .ts-hero-bg::after {
   content: '';
   position: absolute;
