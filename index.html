@@ -29,16 +29,29 @@
     <div class="ts-gate-overlay"></div>
   </div>
   <div class="ts-gate-content">
-    <p class="ts-gate-label">THOBANE SITHOLE &middot; PORTFOLIO</p>
-    <h1 class="ts-gate-headline">
-      HELLO AND WELCOME <br> TO MY <br>
-      <span class="ts-orange">PORTFOLIO</span>
-    </h1>
-    <p class="ts-gate-sub">Best experienced with sound on.</p>
-    <button id="ts-gate-enter" type="button" class="ts-btn ts-btn-pill">
-      ENTER THE PORTFOLIO <span class="ts-btn-arrow">&#8599;</span>
-    </button>
-    <p class="ts-gate-scroll-hint">SCROLL ↓</p>
+    <div class="ts-gate-card-wrap">
+      <div class="ts-gate-card" id="ts-gate-card">
+
+        <!-- FRONT -->
+        <div class="ts-gate-card-front">
+          <p class="ts-gate-label">THOBANE SITHOLE &middot; PORTFOLIO</p>
+          <h1 class="ts-gate-headline">
+            HELLO AND WELCOME <br> TO MY <br>
+            <span class="ts-orange">PORTFOLIO</span>
+          </h1>
+          <p class="ts-gate-sub">Best experienced with sound on.</p>
+          <button id="ts-gate-enter" type="button" class="ts-btn ts-btn-pill">
+            ENTER THE PORTFOLIO <span class="ts-btn-arrow">&#8599;</span>
+          </button>
+        </div>
+
+        <!-- BACK (visible during exit flip) -->
+        <div class="ts-gate-card-back" aria-hidden="true">
+          <p class="ts-gate-back-logo">TS.</p>
+        </div>
+
+      </div>
+    </div>
   </div>
 </div>
 

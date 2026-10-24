@@ -219,10 +219,57 @@ h1,h2,h3,h4,h5,h6 { font-weight: normal; line-height: 1.05; }
 .ts-gate-content {
   position: relative;
   z-index: 1;
-  text-align: center;
-  padding: 2rem;
-  max-width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
+  padding: 2rem;
+}
+.ts-gate-card-wrap {
+  perspective: 1200px;
+  width: clamp(300px, 90vw, 520px);
+}
+.ts-gate-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  transition: transform 0.75s cubic-bezier(0.645, 0.045, 0.355, 1);
+  position: relative;
+  width: 100%;
+}
+.ts-gate-card.ts-flipping {
+  transform: rotateY(-180deg);
+}
+.ts-gate-card-front,
+.ts-gate-card-back {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3.5rem 3rem;
+  border-radius: 15px;
+  background: rgba(18,18,18,0.92);
+  box-shadow:
+    inset 2px 2px 10px rgba(0,0,0,1),
+    inset -1px -1px 5px rgba(255,255,255,0.07),
+    0 24px 64px rgba(0,0,0,0.55);
+  width: 100%;
+}
+.ts-gate-card-back {
+  position: absolute;
+  inset: 0;
+  transform: rotateY(180deg);
+  justify-content: center;
+}
+.ts-gate-back-logo {
+  font-family: var(--font-display);
+  font-size: 5rem;
+  font-weight: 700;
+  color: var(--orange);
+  letter-spacing: -0.02em;
+  line-height: 1;
 }
 .ts-gate-label {
   font-size: var(--size-xs);

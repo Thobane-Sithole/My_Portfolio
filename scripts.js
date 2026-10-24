@@ -86,10 +86,20 @@
     initTicker();
   }
 
+  function flipAndEnter() {
+    var card = document.getElementById('ts-gate-card');
+    if (card) {
+      card.classList.add('ts-flipping');
+      setTimeout(enterPortfolio, 650);
+    } else {
+      enterPortfolio();
+    }
+  }
+
   if (gateBtn) {
-    gateBtn.addEventListener('click', enterPortfolio);
+    gateBtn.addEventListener('click', flipAndEnter);
     gateBtn.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); enterPortfolio(); }
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flipAndEnter(); }
     });
   }
 
