@@ -24,6 +24,15 @@
   var hasScrolled = false;
 
   /* ─────────────────────────────────────────
+     SCROLL LOCK
+  ───────────────────────────────────────── */
+  function lockScroll()   { document.body.style.overflow = 'hidden'; }
+  function unlockScroll() { document.body.style.overflow = ''; }
+
+  // Lock while the entry gate is visible
+  lockScroll();
+
+  /* ─────────────────────────────────────────
      FOOTER YEAR
   ───────────────────────────────────────── */
   if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -46,6 +55,9 @@
         gate.removeAttribute('aria-modal');
       }, { once: true });
     }
+
+    // Unlock scroll now that gate is gone
+    unlockScroll();
 
     // Show site
     if (site) {
@@ -306,24 +318,37 @@
   /* ─────────────────────────────────────────
      CTA BUTTON → CONTACT MODAL
   ───────────────────────────────────────── */
+  function openModal() {
+    if (!contactModal) return;
+    contactModal.classList.add('active');
+    lockScroll();
+    contactModal.querySelector('.ts-modal-close').focus();
+  }
+
+  function closeModal() {
+    if (!contactModal) return;
+    contactModal.classList.remove('active');
+    unlockScroll();
+  }
+
   if (ctaBtn && contactModal) {
-    ctaBtn.addEventListener('click', function () {
-      contactModal.classList.add('active');
-      contactModal.querySelector('.ts-modal-close').focus();
-    });
+    ctaBtn.addEventListener('click', openModal);
   }
 
   // Close modal on overlay click
   if (contactModal) {
     contactModal.addEventListener('click', function (e) {
-      if (e.target === contactModal) contactModal.classList.remove('active');
+      if (e.target === contactModal) closeModal();
     });
+    // Close button
+    var closeBtn = contactModal.querySelector('.ts-modal-close');
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
   }
 
   // Close modal on Escape
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && contactModal && contactModal.classList.contains('active')) {
-      contactModal.classList.remove('active');
+      closeModal();
     }
   });
 
@@ -333,7 +358,7 @@
     if (!btn) return;
     e.preventDefault();
     e.stopImmediatePropagation();
-    if (contactModal) contactModal.classList.add('active');
+    openModal();
   }, true);
 
   /* ─────────────────────────────────────────
