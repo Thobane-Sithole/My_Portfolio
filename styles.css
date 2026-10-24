@@ -234,6 +234,7 @@ h1,h2,h3,h4,h5,h6 { font-weight: normal; line-height: 1.05; }
   justify-content: center;
   align-items: center;
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
   transition: transform 0.75s cubic-bezier(0.645, 0.045, 0.355, 1);
   position: relative;
   width: 100%;
@@ -261,7 +262,14 @@ h1,h2,h3,h4,h5,h6 { font-weight: normal; line-height: 1.05; }
   position: absolute;
   inset: 0;
   transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
   justify-content: center;
+  /* keep hidden until flip starts so it never overlays the front */
+  opacity: 0;
+  transition: opacity 0s 0.35s;
+}
+.ts-gate-card.ts-flipping .ts-gate-card-back {
+  opacity: 1;
 }
 .ts-gate-back-logo {
   font-family: var(--font-display);

@@ -469,19 +469,26 @@
       if (lbl && !btn.disabled) lbl.textContent = 'Hold to Send →';
     }
 
-    btn.addEventListener('pointerdown', function (e) {
-      if (btn.disabled) return;
+    function startHold(e) {
+      if (btn.disabled || holdStart !== null) return; // prevent double-fire
+      if (e.button !== undefined && e.button !== 0) return; // left/touch only
       e.preventDefault();
-      btn.setPointerCapture(e.pointerId);
       holdStart = performance.now();
       btn.classList.add('ts-is-holding');
       if (lbl) lbl.textContent = 'Keep holding…';
       rafId = requestAnimationFrame(tick);
-    });
+    }
 
+    // Pointer events (covers touch + mouse on modern browsers)
+    btn.addEventListener('pointerdown',   startHold);
     btn.addEventListener('pointerup',     reset);
     btn.addEventListener('pointercancel', reset);
     btn.addEventListener('pointerleave',  reset);
+
+    // Mouse fallbacks for browsers that misfire pointer events
+    btn.addEventListener('mousedown',  startHold);
+    btn.addEventListener('mouseup',    reset);
+    btn.addEventListener('mouseleave', reset);
   }());
 
   /* ─────────────────────────────────────────
