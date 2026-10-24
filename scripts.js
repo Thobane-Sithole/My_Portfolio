@@ -398,6 +398,58 @@
   }
 
   /* ─────────────────────────────────────────
+     HOLD-TO-SUBMIT
+  ───────────────────────────────────────── */
+  (function () {
+    if (!contactForm) return;
+    var btn  = contactForm.querySelector('.ts-form-submit');
+    var fill = contactForm.querySelector('.ts-hold-fill');
+    var lbl  = contactForm.querySelector('.ts-submit-text');
+    if (!btn || !fill) return;
+
+    var HOLD_MS   = 1500;
+    var holdStart = null;
+    var rafId     = null;
+
+    function tick() {
+      var progress = Math.min((performance.now() - holdStart) / HOLD_MS, 1);
+      fill.style.transform = 'scaleX(' + progress + ')';
+      if (progress < 1) {
+        rafId = requestAnimationFrame(tick);
+      } else {
+        reset();
+        if (contactForm.checkValidity()) {
+          contactForm.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
+        } else {
+          contactForm.reportValidity();
+        }
+      }
+    }
+
+    function reset() {
+      if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+      holdStart = null;
+      btn.classList.remove('ts-is-holding');
+      fill.style.transform = 'scaleX(0)';
+      if (lbl && !btn.disabled) lbl.textContent = 'Hold to Send →';
+    }
+
+    btn.addEventListener('pointerdown', function (e) {
+      if (btn.disabled) return;
+      e.preventDefault();
+      btn.setPointerCapture(e.pointerId);
+      holdStart = performance.now();
+      btn.classList.add('ts-is-holding');
+      if (lbl) lbl.textContent = 'Keep holding…';
+      rafId = requestAnimationFrame(tick);
+    });
+
+    btn.addEventListener('pointerup',     reset);
+    btn.addEventListener('pointercancel', reset);
+    btn.addEventListener('pointerleave',  reset);
+  }());
+
+  /* ─────────────────────────────────────────
      NAV SMOOTH SCROLL
   ───────────────────────────────────────── */
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {

@@ -850,7 +850,30 @@ h1,h2,h3,h4,h5,h6 { font-weight: normal; line-height: 1.05; }
 .ts-select { appearance: none; cursor: pointer; }
 .ts-select option { background: #111; }
 .ts-textarea { resize: vertical; min-height: 100px; }
-.ts-form-submit { margin-top: .5rem; }
+/* Hold-to-submit button */
+.ts-form-submit {
+  margin-top: .5rem;
+  position: relative;
+  overflow: hidden;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+.ts-form-submit:active { transform: none; }
+.ts-hold-fill {
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,.18);
+  transform: scaleX(0);
+  transform-origin: left center;
+  pointer-events: none;
+  border-radius: inherit;
+  will-change: transform;
+}
+.ts-form-submit.ts-is-holding .ts-submit-text { opacity: .7; }
 .ts-form-result { font-size: var(--size-sm); min-height: 1.2em; color: var(--muted); }
 .ts-form-result.ts-success { color: #00d084; }
 .ts-form-result.ts-error { color: #ff6b6b; }

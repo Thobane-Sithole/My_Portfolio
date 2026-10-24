@@ -628,8 +628,9 @@
         <textarea class="ts-input ts-textarea" id="ts-message" name="message" rows="4"
                   placeholder="Tell me about your project…" required></textarea>
       </div>
-      <button type="submit" class="ts-btn ts-btn-orange ts-form-submit">
-        <span class="ts-submit-text">Send Message &#8594;</span>
+      <button type="button" class="ts-btn ts-btn-orange ts-form-submit" aria-label="Hold to send message">
+        <span class="ts-hold-fill" aria-hidden="true"></span>
+        <span class="ts-submit-text">Hold to Send →</span>
         <span class="ts-submit-sending" aria-live="polite" hidden>Sending…</span>
       </button>
       <p class="ts-form-result" id="ts-form-result" role="status" aria-live="polite"></p>
