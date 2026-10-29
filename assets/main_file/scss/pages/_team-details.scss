@@ -1,0 +1,392 @@
+.team-details {
+  // =====Banner section=====
+  .banner {
+    .images-optimization {
+      img {
+        width: 100%;
+        min-height: 200px;
+        max-height: 426px;
+      }
+      .cover-images-overlay {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: start;
+        text-align: start;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        height: 100%;
+        .banner-content {
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          position: absolute;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          text-align: center;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+        }
+      }
+    }
+    .home-about-link {
+      bottom: 0;
+      position: absolute;
+      ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        background-color: $secondaryColor;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content;
+        padding: 20px 30px;
+        li {
+          -webkit-transition: all 0.5s ease;
+          -o-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+          position: relative;
+          a {
+            &::before {
+              border-bottom: 2px solid $primaryColor;
+              content: "";
+              position: absolute;
+              width: 5%;
+              bottom: 0px;
+              -webkit-transition: all 0.5s ease;
+              -o-transition: all 0.5s ease;
+              transition: all 0.5s ease;
+            }
+            &:hover::before {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  // =====team-member-details=====
+  .team-member-details {
+    .percentages {
+      margin-bottom: 25px;
+      .progress-bars {
+        margin-bottom: 24px;
+        #progressNumberRate {
+          margin-right: 110px;
+        }
+        #progressNumberWork {
+          margin-right: 270px;
+        }
+        #progressNumberClient {
+          margin-right: 38px;
+        }
+        .progress {
+          background-color: $primaryColor;
+          height: 14px;
+          width: 100%;
+          border-radius: 0;
+        }
+
+        .bar.numberRate {
+          background-color: $secondaryColor;
+          -webkit-clip-path: polygon(0% -1%, 95% -1%, 100% 100%, 0% 100%);
+          clip-path: polygon(0% -1%, 95% -1%, 100% 100%, 0% 100%);
+          height: 14px;
+          width: 80%;
+          -webkit-animation: progressBarNumberRate 4s linear;
+          animation: progressBarNumberRate 4s linear;
+        }
+        @-webkit-keyframes progressBarNumberRate {
+          0% {
+            width: 0;
+          }
+          100% {
+            width: 80%;
+          }
+        }
+        @keyframes progressBarNumberRate {
+          0% {
+            width: 0;
+          }
+          100% {
+            width: 80%;
+          }
+        }
+        .bar.numberWork {
+          background-color: $secondaryColor;
+          -webkit-clip-path: polygon(0% -1%, 95% -1%, 100% 100%, 0% 100%);
+          clip-path: polygon(0% -1%, 95% -1%, 100% 100%, 0% 100%);
+          height: 14px;
+          width: 50%;
+          -webkit-animation: progressBarNumberWork 3s linear;
+          animation: progressBarNumberWork 3s linear;
+        }
+        @-webkit-keyframes progressBarNumberWork {
+          0% {
+            width: 0;
+          }
+          100% {
+            width: 50%;
+          }
+        }
+        @keyframes progressBarNumberWork {
+          0% {
+            width: 0;
+          }
+          100% {
+            width: 50%;
+          }
+        }
+        .bar.numberClient {
+          background-color: $secondaryColor;
+          -webkit-clip-path: polygon(0% -1%, 95% -1%, 100% 100%, 0% 100%);
+          clip-path: polygon(0% -1%, 95% -1%, 100% 100%, 0% 100%);
+          height: 14px;
+          width: 95%;
+          -webkit-animation: progressBarNumberClient 5s linear;
+          animation: progressBarNumberClient 5s linear;
+        }
+        @-webkit-keyframes progressBarNumberClient {
+          0% {
+            width: 0;
+          }
+          100% {
+            width: 95%;
+          }
+        }
+        @keyframes progressBarNumberClient {
+          0% {
+            width: 0;
+          }
+          100% {
+            width: 95%;
+          }
+        }
+      }
+    }
+    .information {
+      background-color: $thirdColor;
+      padding: 50px;
+      margin-left: -90px;
+      a {
+        color: $darkBlueBlack;
+      }
+      .top-title {
+        color: $darkBlueBlack;
+        opacity: 0.5;
+      }
+      .social-link {
+        background-color: $whiteColor;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-transition: 1s;
+        -o-transition: 1s;
+        transition: 1s;
+        .icon {
+          -webkit-transition: 1s;
+          -o-transition: 1s;
+          transition: 1s;
+        }
+        &:hover {
+          background-color: $secondaryColor;
+        }
+        &:hover .icon {
+          color: $whiteColor;
+        }
+      }
+      .phone {
+      }
+    }
+  }
+  // =====Our Dedicated Investigators=====
+  .our-investigators {
+    .card-body {
+      margin-top: -230px;
+      ul {
+        li {
+          background-color: $whiteColor;
+          width: 30px;
+          height: 30px;
+          margin-bottom: 4px;
+          text-align: center;
+          -webkit-transition: background-color 0.3s ease;
+          -o-transition: background-color 0.3s ease;
+          transition: background-color 0.3s ease;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          a {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            color: $secondaryColor;
+          }
+        }
+      }
+      .share-btn {
+        background-color: $secondaryColor;
+        color: $whiteColor;
+        width: 30px;
+        height: 30px;
+      }
+
+      .info {
+        background-color: $primaryColor;
+        color: $whiteColor;
+        -webkit-transition: background-color 0.3s ease;
+        -o-transition: background-color 0.3s ease;
+        transition: background-color 0.3s ease;
+      }
+
+      &:hover .info {
+        background-color: $secondaryColor;
+      }
+    }
+  }
+  // social link
+  .hideLink {
+    visibility: hidden;
+  }
+}
+
+/* ==============Responsive classes============== */
+/* Responsive: start 320px end: 1368px  */
+
+@media screen and (min-width: 320px) and (max-width: 576px) {
+  .team-details .banner .home-about-link ul {
+    padding: 12px 22px;
+  }
+  .home-one .our-investigators .card-body {
+    padding: 0 45px;
+  }
+  .team-details .team-member-details .percentages {
+    margin: 30px 0px;
+  }
+  .team-details
+    .team-member-details
+    .percentages
+    .progress-bars
+    #progressNumberRate {
+    margin-right: 0;
+  }
+  .team-details
+    .team-member-details
+    .percentages
+    .progress-bars
+    #progressNumberWork {
+    margin-right: 0;
+  }
+  .team-details
+    .team-member-details
+    .percentages
+    .progress-bars
+    #progressNumberClient {
+    margin-right: 0;
+  }
+  .team-details .team-member-details .information {
+    padding: 10px;
+    margin-left: 0px;
+  }
+  .team-details .team-member-details .information .social-link {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .banner .images-optimization .cover-images-overlay {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .team-details .banner .images-optimization img {
+    min-height: 300px;
+  }
+  .team-details .team-member-details .percentages {
+    margin: 30px 0px;
+  }
+  .team-details
+    .team-member-details
+    .percentages
+    .progress-bars
+    #progressNumberRate {
+    margin-right: 0;
+  }
+  .team-details
+    .team-member-details
+    .percentages
+    .progress-bars
+    #progressNumberWork {
+    margin-right: 0px;
+  }
+  .team-details
+    .team-member-details
+    .percentages
+    .progress-bars
+    #progressNumberClient {
+    margin-right: 0px;
+  }
+  .team-details .team-member-details .information {
+    margin-left: -200px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .banner .images-optimization .cover-images-overlay {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .team-details .banner .images-optimization img {
+    min-height: 300px;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .team-details .banner .images-optimization img {
+    min-height: 300px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+}

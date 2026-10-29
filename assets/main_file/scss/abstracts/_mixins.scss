@@ -1,0 +1,24 @@
+@mixin square-style {
+  content: "";
+  background-color: $secondaryColor;
+  width: 10px;
+  height: 10px;
+}
+
+/* ==============Responsive classes============== */
+/* Responsive: start 320px end: 1368px  */
+
+@media screen and (min-width: 320px) and (max-width: 576px) {
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+}

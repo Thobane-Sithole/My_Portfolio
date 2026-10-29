@@ -1,0 +1,738 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+.service {
+  // =====Banner section=====
+  .banner {
+    .images-optimization {
+      img {
+        width: 100%;
+        min-height: 200px;
+      }
+      .cover-images-overlay {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: start;
+        text-align: start;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        height: 100%;
+        .banner-content {
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          position: absolute;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          text-align: center;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+        }
+      }
+    }
+    .home-about-link {
+      bottom: 0;
+      position: absolute;
+      ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        background-color: $secondaryColor;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content;
+        padding: 20px 30px;
+        li {
+          -webkit-transition: all 0.5s ease;
+          -o-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+          position: relative;
+          a {
+            &::before {
+              border-bottom: 2px solid $primaryColor;
+              content: "";
+              position: absolute;
+              width: 5%;
+              bottom: 0px;
+              -webkit-transition: all 0.5s ease;
+              -o-transition: all 0.5s ease;
+              transition: all 0.5s ease;
+            }
+            &:hover::before {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  // =====News service From Our=====
+  .news-services {
+    .animated-circles {
+      margin-left: 20px;
+    }
+    .news-cards {
+      margin-bottom: 140px;
+    }
+    .card {
+      .card-body {
+        background-color: $whiteColor;
+        margin: 0 0 0 80px;
+        position: absolute;
+        top: 200px;
+        border-radius: 2px;
+        -webkit-box-shadow: 1px 0px 5px -2px;
+        box-shadow: 1px 0px 5px -2px;
+        -webkit-transition: 2s;
+        -o-transition: 2s;
+        transition: 2s;
+        padding: 30px 20px;
+        border: 1px dashed $secondaryColor;
+        img {
+          background-color: $whiteColor;
+          -webkit-box-shadow: 1px 1px 1px 1px $secondaryColor;
+          box-shadow: 1px 1px 1px 1px $secondaryColor;
+          width: 51px;
+          height: 51px;
+          border-radius: 50%;
+          left: 0;
+          top: -30px;
+          position: absolute;
+          z-index: 1;
+          padding: 5px;
+        }
+        .more-btn {
+          color: $secondaryColor;
+          -webkit-transition: 2s;
+          -o-transition: 2s;
+          transition: 2s;
+          span {
+            text-decoration: underline;
+          }
+          i {
+            opacity: 0.4;
+            -webkit-transition: 1s;
+            -o-transition: 1s;
+            transition: 1s;
+          }
+          &:hover i {
+            opacity: 1;
+            color: $primaryColor;
+          }
+        }
+        &:hover {
+          background-color: $secondaryColor;
+        }
+        h5,
+        p {
+          color: $blackColor;
+          -webkit-transition: 2s;
+          -o-transition: 2s;
+          transition: 2s;
+        }
+        &:hover .more-btn,
+        &:hover h5,
+        &:hover p {
+          color: $whiteColor;
+        }
+      }
+      img {
+        -webkit-transition: -webkit-transform 2s;
+        transition: -webkit-transform 2s;
+        -o-transition: transform 2s;
+        transition: transform 2s;
+        transition: transform 2s, -webkit-transform 2s;
+      }
+      border: 0;
+      &:hover img {
+        -webkit-transform: rotate(-1deg) scale(1);
+        -ms-transform: rotate(-1deg) scale(1);
+        transform: rotate(-1deg) scale(1);
+      }
+    }
+    .see-all {
+      margin-top: 20px;
+      a {
+        color: $secondaryColor;
+      }
+    }
+  }
+  // =====Best City Government & Municipal Service Based On USA======
+  .best-city-government {
+    position: relative;
+    .images-and-overlay {
+      position: relative;
+      img {
+        width: 100%;
+        min-height: 300px;
+        max-height: 737px;
+      }
+      .overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(14, 12, 12, 0.298);
+        border-radius: 0% 0% 24% 24%/0% 0% 15% 15%;
+      }
+    }
+    .home-pages-video-popup {
+      display: block;
+    }
+    .city-content {
+      margin-top: -460px;
+      position: relative;
+      row-gap: 50px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      h2 {
+        padding: 1px 0px;
+      }
+      .city-service-list {
+        .city-footer-content {
+          background-color: $whiteColor;
+          padding: 90px 60px 0 60px;
+          ul {
+            li {
+              margin: 20px 0;
+              .divide-row {
+                margin: 15px 0;
+                -webkit-transition: all 1s ease-out;
+                -o-transition: all 1s ease-out;
+                transition: all 1s ease-out;
+              }
+              a {
+                color: $primaryColor;
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 24px;
+                -webkit-transition: all 1s ease-out;
+                -o-transition: all 1s ease-out;
+                transition: all 1s ease-out;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                i {
+                  display: none;
+                  -webkit-transition: all 1s ease-out;
+                  -o-transition: all 1s ease-out;
+                  transition: all 1s ease-out;
+                }
+              }
+              &:hover .divide-row {
+                background-color: $secondaryColor;
+              }
+              &:hover a {
+                color: $secondaryColor;
+              }
+              &:hover a i {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  // =====Sponsor Company Logo=====
+  .company-brand-logo {
+    .divide-row {
+      margin-bottom: 80px;
+      height: 0.5px;
+      position: relative;
+      top: 20px;
+      &::after {
+        background-color: $primaryColor;
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        -webkit-animation: move 20s linear infinite alternate;
+        animation: move 20s linear infinite alternate;
+        @-webkit-keyframes move {
+          0% {
+            left: 0;
+            right: 99%;
+          }
+          100% {
+            right: 0;
+            left: 99%;
+          }
+        }
+        @keyframes move {
+          0% {
+            left: 0;
+            right: 99%;
+          }
+          100% {
+            right: 0;
+            left: 99%;
+          }
+        }
+      }
+    }
+    @-webkit-keyframes scroll {
+      0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+      100% {
+        -webkit-transform: translateX(calc(-250px * 7));
+        transform: translateX(calc(-250px * 7));
+      }
+    }
+    @keyframes scroll {
+      0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+      100% {
+        -webkit-transform: translateX(calc(-250px * 7));
+        transform: translateX(calc(-250px * 7));
+      }
+    }
+    .slider {
+      height: 100px;
+      margin: auto;
+      overflow: hidden;
+      position: relative;
+      width: auto;
+    }
+    .slider .slide-track {
+      -webkit-animation: scroll 40s linear infinite;
+      animation: scroll 40s linear infinite;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      width: calc(250px * 14);
+      -webkit-column-gap: 50px;
+      -moz-column-gap: 50px;
+      column-gap: 50px;
+    }
+    .slider .slide {
+      height: 100px;
+      width: 250px;
+    }
+  }
+  // =====Upcoming City Activities & Events Schedule=====
+  .upcoming-city {
+    background-color: $whiteSmokeColor;
+    .semi-title {
+      margin-left: 22px;
+    }
+    .upcoming-events-card {
+      .card {
+        .scale-up-ver-center:hover img {
+          -webkit-animation: scale-up-ver-center 8s
+            cubic-bezier(0.39, 0.575, 0.565, 1) both;
+          animation: scale-up-ver-center 2s cubic-bezier(0.39, 0.575, 0.565, 1)
+            both;
+
+          @-webkit-keyframes scale-up-ver-center {
+            0% {
+              -webkit-transform: scaleY(0.4);
+              transform: scaleY(0.4);
+            }
+            100% {
+              -webkit-transform: scaleY(1);
+              transform: scaleY(1);
+            }
+          }
+
+          @keyframes scale-up-ver-center {
+            0% {
+              -webkit-transform: scaleY(0.4);
+              transform: scaleY(0.4);
+            }
+            100% {
+              -webkit-transform: scaleY(1);
+              transform: scaleY(1);
+            }
+          }
+        }
+        .card-body {
+          -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+          justify-content: space-between;
+          a {
+            font-size: 20px;
+            color: $whiteColor;
+            cursor: pointer;
+            .card-footer {
+              background-color: $secondaryColor;
+              border-radius: 2px;
+              position: relative;
+              width: 40px;
+              height: 40px;
+              -webkit-box-align: center;
+              -ms-flex-align: center;
+              align-items: center;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-pack: center;
+              -ms-flex-pack: center;
+              justify-content: center;
+              &::before {
+                position: absolute;
+                content: "";
+                top: 5px;
+                left: 5px;
+                border-radius: 2px;
+                width: 40px;
+                height: 40px;
+                margin: 0;
+                padding: 0;
+                border: 1px dotted $secondaryColor;
+              }
+              &:hover::before {
+                -webkit-animation: animName 5s linear infinite;
+                animation: animName 5s linear infinite;
+
+                @-webkit-keyframes animName {
+                  0% {
+                    -webkit-transform: rotate(0deg);
+                    transform: rotate(0deg);
+                  }
+                  100% {
+                    -webkit-transform: rotate(360deg);
+                    transform: rotate(360deg);
+                  }
+                }
+
+                @keyframes animName {
+                  0% {
+                    -webkit-transform: rotate(0deg);
+                    transform: rotate(0deg);
+                  }
+                  100% {
+                    -webkit-transform: rotate(360deg);
+                    transform: rotate(360deg);
+                  }
+                }
+              }
+            }
+          }
+          .info {
+            ul {
+              li {
+                color: $primaryColor;
+                font-size: 15px;
+                line-height: 34px;
+                i {
+                  color: $secondaryColor;
+                }
+              }
+            }
+          }
+        }
+        &:hover .card-body a .card-footer {
+          background-color: transparent;
+        }
+        &:hover .card-body a .card-footer i {
+          color: $secondaryColor;
+        }
+      }
+    }
+    .download-city {
+      h2 {
+        margin-bottom: 40px;
+      }
+      .card {
+        background-color: $secondaryColor;
+        .eyes-download-icons {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          img {
+            width: 40px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+          }
+          .uploadFile-icon,
+          .downloadFile-icon {
+            display: flex;
+            input[type="file"] {
+              display: none;
+            }
+            label {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+  // =====Good words From People=====
+  .our-testimonials {
+    .testimonial-slider {
+      .card {
+        .testi-single-box {
+          position: relative;
+          border-radius: 2px;
+          -webkit-box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.07);
+          box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.07);
+          margin: 0 0px;
+          z-index: 1;
+          -webkit-transition: 0.9s all;
+          -o-transition: 0.9s all;
+          transition: 0.9s all;
+          &:after {
+            position: absolute;
+            content: "";
+            height: 100%;
+            width: 100%;
+            background: $secondaryColor;
+            top: 0;
+            left: 0;
+            border-radius: 2px;
+            z-index: -1;
+            -webkit-transition: 0.5s;
+            -o-transition: 0.5s;
+            transition: 0.5s;
+            -webkit-transform: scale(0.2, 1);
+            -ms-transform: scale(0.2, 1);
+            transform: scale(0.2, 1);
+            opacity: 0;
+          }
+          &:hover:after {
+            -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+            transform: scale(1);
+            opacity: 1;
+          }
+          > i {
+            font-size: 40px;
+            color: rgb(73, 84, 94);
+          }
+          ul {
+            li {
+              color: $secondaryColor;
+            }
+          }
+          &:hover ul li {
+            color: goldenrod;
+          }
+          .name-title {
+            h3 {
+              color: $secondaryColor;
+              margin-bottom: -10px;
+            }
+          }
+          &:hover .name-title h3 {
+            color: $blackColor;
+          }
+          img {
+            width: 15%;
+          }
+        }
+        .small-box-border {
+          position: absolute;
+          content: "";
+          top: 10px;
+          left: 10px;
+          border-radius: 2px;
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          padding: 0;
+          border: 1px dotted $secondaryColor;
+          z-index: -1;
+        }
+      }
+      button.slick-prev.slick-arrow,
+      button.slick-next.slick-arrow {
+        display: none;
+      }
+      .slick-dots li.slick-active button:before {
+        opacity: 1;
+        color: transparent;
+        background: $secondaryColor;
+        width: 20px;
+        height: 5px;
+        border-radius: 10px 20px;
+        margin-top: 7px;
+      }
+    }
+  }
+}
+/* ==============Responsive classes============== */
+/* Responsive: start 320px end: 1368px  */
+
+@media screen and (min-width: 320px) and (max-width: 576px) {
+  .service .banner .home-about-link ul {
+    padding: 12px 22px;
+  }
+  .service .upcoming-city h2 {
+    text-align: center;
+  }
+  .service .news-services .card .card-body {
+    margin: 0;
+    position: relative;
+    top: 0;
+  }
+  .service .news-services .news-cards {
+    margin-bottom: 0px;
+  }
+
+  .service .best-city-government .city-content {
+    margin-top: -285px;
+    row-gap: 10px;
+  }
+  .service .best-city-government .city-content h2 {
+    padding: 40px 0px;
+  }
+  .service .best-city-government .home-pages-video-popup {
+    display: none;
+  }
+  .service
+    .best-city-government
+    .city-content
+    .city-service-list
+    .city-footer-content
+    ul
+    li
+    a {
+    font-weight: 400;
+    font-size: 16px;
+  }
+  .service
+    .best-city-government
+    .city-content
+    .city-service-list
+    .city-footer-content {
+    padding: 12px 12px 0 12px;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .banner .images-optimization .cover-images-overlay {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .service .banner .images-optimization img {
+    min-height: 300px;
+  }
+  .service .news-services .card .card-body {
+    margin: 0;
+    position: relative;
+    top: 0;
+  }
+  .service .news-services .news-cards {
+    margin-bottom: 0px;
+  }
+  .service .best-city-government .city-content {
+    margin-top: -200px;
+    row-gap: 10px;
+  }
+  .service
+    .best-city-government
+    .city-content
+    .city-service-list
+    .city-footer-content
+    ul
+    li
+    a {
+    font-weight: 400;
+    font-size: 16px;
+  }
+  .service
+    .best-city-government
+    .city-content
+    .city-service-list
+    .city-footer-content {
+    padding: 30px 30px 0 30px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .banner .images-optimization .cover-images-overlay {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .service .banner .images-optimization img {
+    min-height: 300px;
+  }
+  .service .news-services .card .card-body {
+    margin: 0;
+    position: relative;
+    top: 0;
+  }
+  .service .news-services .news-cards {
+    margin-bottom: 0px;
+  }
+  .service .best-city-government .city-content {
+    margin-top: -250px;
+    row-gap: 40px;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .service .banner .images-optimization img {
+    min-height: 300px;
+  }
+  .service .news-services .card .card-body {
+    margin: 0 0px 0 20px;
+  }
+  .service .news-services .news-cards {
+    margin-bottom: 180px;
+  }
+  .service .best-city-government .city-content h2 {
+    padding: 40px 0px;
+  }
+  .service .best-city-government .city-content {
+    margin-top: -330px;
+    row-gap: 20px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+}

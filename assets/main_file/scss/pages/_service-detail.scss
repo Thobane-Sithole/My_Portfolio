@@ -1,0 +1,246 @@
+.service-detail {
+  // =====Banner section=====
+  .banner {
+    .images-optimization {
+      img {
+        width: 100%;
+        min-height: 200px;
+        max-height: 426px;
+      }
+      .cover-images-overlay {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: start;
+        text-align: start;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        height: 100%;
+        .banner-content {
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          position: absolute;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          text-align: center;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+        }
+      }
+    }
+    .home-about-link {
+      bottom: 0;
+      position: absolute;
+      ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        background-color: $secondaryColor;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content;
+        padding: 20px 30px;
+        li {
+          -webkit-transition: all 0.5s ease;
+          -o-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+          position: relative;
+          a {
+            &::before {
+              border-bottom: 2px solid $primaryColor;
+              content: "";
+              position: absolute;
+              width: 5%;
+              bottom: 0px;
+              -webkit-transition: all 0.5s ease;
+              -o-transition: all 0.5s ease;
+              transition: all 0.5s ease;
+            }
+            &:hover::before {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  // =====City visitors guide=====
+  .service-details {
+    .details-link {
+      ul {
+        li {
+          background-color: $whiteSmokeColor;
+          padding: 10px;
+          -webkit-transition: ease 2s all;
+          -o-transition: ease 2s all;
+          transition: ease 2s all;
+          border: 1px solid $whiteSmokeColor;
+          margin-bottom: 20px;
+          a {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            span {
+              margin-right: 10px;
+              -webkit-transition: ease 2s all;
+              -o-transition: ease 2s all;
+              transition: ease 2s all;
+              color: $secondaryColor;
+            }
+          }
+          &:hover {
+            border: 1px dashed $secondaryColor;
+          }
+          &:hover span {
+            margin-right: 0px;
+          }
+        }
+      }
+    }
+    .Contact-advice {
+      margin: 30px 0px;
+      img.img-bg {
+        min-height: 460px;
+        -o-object-fit: cover;
+        object-fit: cover;
+      }
+      .cover-images-overlay {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        text-align: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(181, 155, 109, 0.91);
+        position: absolute;
+        height: 100%;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        row-gap: 40px;
+        img.support {
+          width: 80px;
+          background: $whiteColor;
+          padding: 12px;
+          border-radius: 50%;
+        }
+        .phone-coll {
+          a {
+            font-size: 30px;
+            color: $whiteColor;
+            line-height: 48px;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+    .download-files {
+      background-color: $secondaryColor;
+      margin-bottom: 30px;
+      img.download {
+        width: 50px;
+      }
+    }
+    .city-visitors-guide {
+      img.guide-photo {
+        width: 100%;
+        max-height: 390px;
+        margin-bottom: 40px;
+      }
+      p {
+        margin-bottom: 35px;
+      }
+    }
+    .global-transaction-advisory {
+      ul {
+        li {
+          .square {
+            background-color: $secondaryColor;
+            width: 12px;
+            height: 12px;
+            display: inline-block;
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ==============Responsive classes============== */
+/* Responsive: start 320px end: 1368px  */
+
+@media screen and (min-width: 320px) and (max-width: 576px) {
+  .service-detail .banner .home-about-link ul {
+    padding: 12px 22px;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .banner .images-optimization .cover-images-overlay {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .service-detail .banner .images-optimization img {
+    min-height: 300px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .banner .images-optimization .cover-images-overlay {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .service-detail .banner .images-optimization img {
+    min-height: 300px;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .service-detail .banner .images-optimization img {
+    min-height: 300px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+}

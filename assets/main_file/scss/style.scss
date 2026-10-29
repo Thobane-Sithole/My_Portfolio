@@ -1,0 +1,52 @@
+// styles.scss
+
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "abstracts/placeholders";
+
+@import "base/reset";
+@import "base/typography";
+
+@import "components/buttons";
+@import "components/carousel";
+@import "components/cover";
+@import "components/dropdown";
+@import "layout/header";
+@import "layout/grid";
+@import "layout/navigation";
+@import "layout/sidebar";
+@import "layout/forms";
+@import "pages/home";
+@import "pages/home-two";
+@import "pages/home-three";
+@import "pages/about";
+@import "pages/service";
+@import "pages/service-detail";
+@import "pages/team";
+@import "pages/team-details";
+@import "pages/projects-gird";
+@import "pages/projects-details";
+@import "pages/faq-page";
+@import "pages/blog";
+@import "pages/blog-post";
+@import "pages/error-page";
+@import "pages/contact";
+@import "layout/footer";
+
+/* ==============Responsive classes============== */
+/* Responsive: start 320px end: 1368px  */
+
+@media screen and (min-width: 320px) and (max-width: 576px) {
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+}

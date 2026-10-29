@@ -1,0 +1,90 @@
+.banner-card {
+  form {
+    width: 70%;
+    border: 1px dashed $secondaryColor;
+    .banner-input-field {
+      input#solution {
+        width: 80%;
+        border: none;
+        outline: none;
+        padding: 5px 10px;
+        -webkit-transition: 2s;
+        -o-transition: 2s;
+        transition: 2s;
+      }
+      input#solution::-webkit-input-placeholder {
+        white-space: nowrap;
+      }
+      input#solution::-moz-placeholder {
+        white-space: nowrap;
+      }
+      input#solution:-ms-input-placeholder {
+        white-space: nowrap;
+      }
+      input#solution::-ms-input-placeholder {
+        white-space: nowrap;
+      }
+      input#solution::placeholder {
+        white-space: nowrap;
+      }
+      a {
+        border: none;
+        outline: none;
+        background-color: $secondaryColor;
+        color: $whiteColor;
+        padding: 5px;
+        -webkit-transition: background 1s;
+        -o-transition: background 1s;
+        transition: background 1s;
+        word-wrap: break-word;
+        text-align: center;
+        margin: 4px;
+        &:hover {
+          background-color: $ruddyBrown;
+        }
+      }
+    }
+    &:hover {
+      border: 1px solid $ruddyBrown;
+    }
+  }
+}
+
+/* ==============Responsive classes============== */
+/* Responsive: start 320px end: 1368px  */
+
+@media screen and (min-width: 320px) and (max-width: 576px) {
+  footer.home-one {
+    padding: 60px 0px 0px 0px;
+  }
+  .banner-card form {
+    display: none;
+  }
+  .banner-card form .banner-input-field a {
+    white-space: pre-wrap;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .banner-card form {
+    width: 100%;
+  }
+  .banner-card form .banner-input-field a {
+    white-space: pre-wrap;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .banner-card form {
+    width: 100%;
+  }
+  .banner-card form .banner-input-field a {
+    white-space: pre-wrap;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+}

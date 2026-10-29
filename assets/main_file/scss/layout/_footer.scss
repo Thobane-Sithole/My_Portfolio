@@ -1,0 +1,324 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+footer {
+  background-color: $primaryColor;
+  padding: 120px 0px 0px 0px;
+  .subscribe-field {
+    background-color: $primaryColor;
+    padding: 30px 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    form {
+      background-color: $primaryColor;
+      border-radius: 10px;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      max-width: 80%;
+      margin-left: auto;
+      input {
+        background-color: $blackColor;
+        border: 0;
+        outline: none;
+        padding: 10px 20px;
+        width: 70%;
+        height: 50px;
+        font-size: 16px;
+        border-radius: 5px;
+        color: $whiteColor;
+      }
+      .subscript {
+        background-color: $secondaryColor;
+        border: none;
+        outline: none;
+        width: 30%;
+        height: 50px;
+        cursor: pointer;
+        border-radius: 0px 5px 5px 0px;
+        color: $whiteColor;
+        font-size: 16px;
+        -webkit-transition: 1s;
+        -o-transition: 1s;
+        transition: 1s;
+        overflow: hidden;
+        margin-left: -3px;
+        &:hover {
+          -webkit-transform: scale(1);
+          -ms-transform: scale(1);
+          transform: scale(1);
+          color: $primaryColor;
+        }
+      }
+    }
+  }
+  .industry-info,
+  .touch-info {
+    ul {
+      li {
+        margin-bottom: 10px;
+      }
+    }
+  }
+  .our-details {
+    padding: 70px 0px;
+    .card {
+      img {
+        width: 60%;
+      }
+      .card-body {
+        p {
+          font-size: 15px;
+          line-height: 28px;
+        }
+      }
+      .industry-info {
+        ul {
+          li {
+            a {
+              position: relative;
+              &::after {
+                border-bottom: 1px solid $secondaryColor;
+                content: "";
+                position: absolute;
+                width: 0%;
+                bottom: 0;
+                left: 0;
+                -webkit-transition: 2s;
+                -o-transition: 2s;
+                transition: 2s;
+              }
+              &:hover::after {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+      .social-info {
+        ul {
+          li {
+            a {
+              .link-icons {
+                border: 1px dotted #16711e;
+                width: 15px;
+                height: 15px;
+                padding: 5px;
+                -webkit-transition: 0.5s;
+                -o-transition: 0.5s;
+                transition: 0.5s;
+              }
+              &:hover .link-icons {
+                background-color: #16711e;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .term-and-condition {
+    background-color: $primaryColor;
+    padding: 20px 0px;
+    .copy-right-content {
+      .copy-right {
+        span {
+          color: $secondaryColor;
+        }
+      }
+    }
+    .button-div {
+      margin-top: -100px;
+      .up-to-down-btn {
+        background-color: $secondaryColor;
+        color: $whiteColor;
+        border: none;
+        outline: none;
+        padding: 8px 12px;
+        font-size: 18px;
+        border-radius: 50%;
+        -webkit-transition: 0.4s ease;
+        -o-transition: 0.4s ease;
+        transition: 0.4s ease;
+        i {
+          -webkit-animation: upToDownBtn 2s infinite;
+          animation: upToDownBtn 2s infinite;
+          font-size: 18px;
+          @-webkit-keyframes upToDownBtn {
+            0% {
+              -webkit-transform: translateY(1.5rem);
+              transform: translateY(1.5rem);
+              opacity: 0;
+            }
+            100% {
+              opacity: 1;
+            }
+          }
+          @keyframes upToDownBtn {
+            0% {
+              -webkit-transform: translateY(1.5rem);
+              transform: translateY(1.5rem);
+              opacity: 0;
+            }
+            100% {
+              opacity: 1;
+            }
+          }
+        }
+      }
+      .to-top {
+        position: fixed;
+        bottom: 16px;
+        right: 32px;
+        width: 3.125rem;
+        height: 3.125rem;
+        border-radius: 50%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        font-size: 2rem;
+        opacity: 0;
+        pointer-events: none;
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        transition: all 0.4s;
+      }
+    }
+    .to-top.active {
+      opacity: 1;
+      bottom: 2rem;
+      pointer-events: auto;
+    }
+  }
+}
+
+/* ==============Responsive classes============== */
+/* Responsive: start 320px end: 1368px  */
+
+@media screen and (min-width: 320px) and (max-width: 576px) {
+  footer .subscribe-field form button {
+    width: 30%;
+  }
+  footer .our-details .card img {
+    width: 40%;
+  }
+  footer {
+    margin-top: 50px;
+    padding: 30px 0;
+  }
+  footer .subscribe-field form {
+    max-width: 100%;
+    border-radius: 5px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    float: none;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+  }
+  footer .subscribe-field form input {
+    border: 0;
+    padding: 10px 10px;
+    width: 80%;
+    height: 50px;
+    font-size: 14px;
+  }
+  footer .subscribe-field form button {
+    width: 30%;
+  }
+  footer .term-and-condition .copy-right-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    row-gap: 20px;
+    text-align: center;
+  }
+  footer .term-and-condition .button-div {
+    margin-top: -50px;
+    position: absolute;
+  }
+  footer .our-details {
+    padding: 35px 0px;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  footer {
+    padding: 50px 0px;
+  }
+  footer .our-details .card img {
+    width: 50%;
+  }
+  footer .subscribe-field {
+    padding: 30px 0px;
+    text-align: center;
+  }
+  footer .subscribe-field form {
+    width: 100%;
+  }
+  footer .subscribe-field form {
+    width: 100%;
+    margin: 0 auto;
+  }
+  footer .term-and-condition .button-div {
+    margin-top: -90px;
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+  }
+  footer .term-and-condition .copy-right-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    row-gap: 20px;
+    text-align: center;
+  }
+  footer .our-details {
+    padding: 35px 0px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  footer {
+    padding: 60px 0px 0px 0px;
+  }
+  footer .subscribe-field {
+    padding: 30px 0px;
+    text-align: center;
+  }
+  footer .subscribe-field form input {
+    width: 60%;
+  }
+  footer .term-and-condition .button-div {
+    margin-top: -100px;
+  }
+  footer .subscribe-field form {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+}

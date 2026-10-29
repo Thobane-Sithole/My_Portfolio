@@ -1,0 +1,227 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+.contact {
+  // =====Banner section=====
+  .banner {
+    .images-optimization {
+      img {
+        width: 100%;
+        min-height: 200px;
+        max-height: 426px;
+      }
+      .cover-images-overlay {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: start;
+        text-align: start;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        height: 100%;
+        .banner-content {
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          position: absolute;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          text-align: center;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+        }
+      }
+    }
+    .home-about-link {
+      bottom: 0;
+      position: absolute;
+      ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        background-color: $secondaryColor;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content;
+        padding: 20px 30px;
+        li {
+          -webkit-transition: all 0.5s ease;
+          -o-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+          position: relative;
+          a {
+            &::before {
+              border-bottom: 2px solid $primaryColor;
+              content: "";
+              position: absolute;
+              width: 5%;
+              bottom: 0px;
+              -webkit-transition: all 0.5s ease;
+              -o-transition: all 0.5s ease;
+              transition: all 0.5s ease;
+            }
+            &:hover::before {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  // =====contact section=====
+  .contact-information {
+    background-color: $thirdColor;
+    padding: 50px;
+    .contact-info {
+      background-color: $secondaryColor;
+      h2 {
+        margin-bottom: 20px;
+      }
+    }
+    .info-item {
+      background-color: $primaryColor;
+      color: $whiteColor;
+      margin-bottom: 20px;
+      padding: 8px 4px;
+      a {
+        color: $whiteColor;
+      }
+      p {
+        color: $whiteColor;
+      }
+      .contact-icon {
+        background-color: $thirdColor;
+        margin: 10px;
+        padding: 10px;
+        i {
+          color: $secondaryColor;
+          font-size: 24px;
+        }
+      }
+      p {
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+    .get-quote {
+      h2 {
+        margin-bottom: 20px;
+      }
+    }
+    #contactForm {
+      .form-group {
+        width: 100%;
+        label {
+          font-size: 14px;
+          color: $darkBlueBlack;
+        }
+      }
+      .form-control {
+        background-color: $darkBlueBlack;
+        color: $whiteColor;
+        border: 1px solid $darkBlueBlack;
+      }
+    }
+  }
+  // =====Google map section=====
+  .google-map {
+    margin-bottom: 0;
+    #map {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      width: 100%;
+      height: 650px;
+      .map-part {
+        background: $secondaryColor;
+        padding: 20px;
+        max-width: 340px;
+        max-height: 300px;
+      }
+    }
+  }
+}
+
+/* ==============Responsive classes============== */
+/* Responsive: start 320px end: 1368px  */
+
+@media screen and (min-width: 320px) and (max-width: 576px) {
+  .contact .banner .home-about-link ul {
+    padding: 12px 22px;
+  }
+  .contact .contact-information {
+    padding: 30px;
+  }
+  form#contactForm .two-group {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .contact .google-map {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .banner .images-optimization .cover-images-overlay {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .contact .banner .images-optimization img {
+    min-height: 300px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .banner .images-optimization .cover-images-overlay {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .contact .banner .images-optimization img {
+    min-height: 300px;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .contact .banner .images-optimization img {
+    min-height: 300px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+}
